@@ -37,12 +37,13 @@ export default {
             imageObject: new Image(),
             biggerHeight: false,
             savedRecipes: [],
+            allowedLength: 20
         };
     },
     created() {
         this.title = this.recipe.title;
-        if (this.title.length > 15) {
-            this.title = this.title.slice(0, 15) + "...";
+        if (this.title.length > this.allowedLength) {
+            this.title = this.title.slice(0, this.allowedLength) + "...";
         }
         this.id = this.recipe.id;
         this.image = this.recipe.image;

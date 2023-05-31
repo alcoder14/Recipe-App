@@ -62,6 +62,8 @@ export default {
         .modal-window{
             width: 250px;
             height: 70px;
+            bottom: 100px;
+            right: 30px;
             .message{
                 font-size: 15px;
             }

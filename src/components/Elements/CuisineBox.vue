@@ -53,5 +53,17 @@ export default {
             font-size: 26px;
         }
     }
+    @media(max-width: 584px){
+        .box{
+            height: 180px;
+            .fi{
+                width: 30%;
+                height: 30%;
+            }
+            .title{
+                font-size: 22px;
+            }
+        }
+    }
     
 </style>

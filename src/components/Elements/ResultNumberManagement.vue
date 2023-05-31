@@ -77,5 +77,17 @@ export default {
             font-size: 18px;
         }   
     }
+
+    @media(max-width: 525px){
+        .row-container{
+            @include flex-column();
+            .results-settings-container{
+                justify-content: flex-start;
+            }
+            .block{
+                width: 100%;
+            }
+        }
+    }
     
 </style>

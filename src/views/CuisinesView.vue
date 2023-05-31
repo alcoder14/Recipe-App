@@ -103,14 +103,17 @@ export default {
   }
   @media(max-width: 768px){
     .flag-container{
-      grid-template-columns: repeat(2, 45%);
+      grid-template-columns: repeat(2, 48%);
+      justify-content: space-evenly;
     }
   }
+  /*
   @media(max-width: 584px){
     .flag-container{
       justify-content: center;
       grid-template-columns: repeat(1, 90%);
     }
   }
+  */
   
 </style>

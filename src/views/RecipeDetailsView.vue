@@ -370,6 +370,10 @@ export default {
                 margin-right: 0;
             }
         }
+
+        .toggle-btn, .save-btn, .delete-btn{
+            font-size: 18px;
+        }
     }
     
 </style>
