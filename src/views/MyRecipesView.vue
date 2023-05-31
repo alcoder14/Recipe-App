@@ -36,7 +36,7 @@ export default {
         return{
             savedRecipes: [],
             noSavedRecipes: true,
-            recipesNum: Number,
+            recipesNum: 0,
             warningVisible: false,
             deleteBtnDisabled: true
         }
