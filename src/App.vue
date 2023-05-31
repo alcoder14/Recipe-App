@@ -1,30 +1,56 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavbarDesktop v-if="desktopNavbarVisible" />
+  <NavbarMobile v-if="!desktopNavbarVisible"/>
+  <router-view :key="$route.params"/>
+  <FooterComponent />
+  <div class="blank-space" v-if="footerSpaceVisible"></div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import FooterComponent from "./components/Containers/FooterComponent.vue";
+  import NavbarDesktop from "./components/Containers/NavbarDesktop.vue";
+  import NavbarMobile from './components/Containers/NavbarMobile.vue';
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  export default{
+    name: 'App',
+    components: {
+      FooterComponent,
+      NavbarDesktop,
+      NavbarMobile
+    },
+    data(){
+      return{
+        desktopNavbarVisible: true,
+        footerSpaceVisible: false
+      }
+    },
+    mounted(){
+      window.addEventListener("resize", this.checkWidth)
+      this.checkWidth()
+    },
+    methods: {
+      checkWidth(){
+        if(window.innerWidth < 584){
+          this.desktopNavbarVisible = false
+          this.footerSpaceVisible = true
+        } else {
+          this.desktopNavbarVisible = true
+          this.footerSpaceVisible = false
+        }
+      }
     }
+
+
   }
-}
+</script>
+
+<style scoped>
+
+  @import "@/assets/global.scss";
+  .blank-space{
+    height: 100px;
+    width: 100%;
+    background-color: #323232;
+  }
+  
 </style>
