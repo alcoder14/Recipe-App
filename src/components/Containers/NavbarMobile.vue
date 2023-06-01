@@ -17,9 +17,7 @@
 
 <script>
 export default {
-    name: "NavbarMobile",
-
-    
+    name: "NavbarMobile",    
 }
 </script>
 

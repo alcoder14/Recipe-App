@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @mixin flex-row{
@@ -16,11 +16,17 @@
 }
 
 
+/*
 $primary: #2c2c2c;
 $secondary: #323232;
 $tertiary:  #F2762F;
 $white: white;
+*/
 
+$primary: white;
+$secondary: #f7f7f7;
+$tertiary:   #FFD166;
+$white: #FF6B6B;
 
 .section-width-100{
     width: 100%;

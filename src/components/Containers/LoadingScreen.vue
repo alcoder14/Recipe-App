@@ -28,19 +28,19 @@ export default {
         border-radius: 20px;
         .text{
             font-size: 40px;
-            color: white;
+            color: $white;
         }
 
         .progress-container{
             width: 30%;
             height: 10px;
-            background-color: $secondary;
+            background-color: $tertiary;
             margin: 20px;
             border-radius: 12px;
             position: relative;
             .progress{
                 height: inherit;
-                background-color: $tertiary;
+                background-color: $white;
                 width: 10%;
                 border-radius: inherit;
                 position: absolute;

@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-container">
+    <div class="modal-container" @click="closeFromOutside">
         <div class="modal-window">
             <p class="question">Are you sure you want to delete all recipes?</p>
             <div class="buttons-container">
@@ -30,6 +30,11 @@ export default {
         noChosen(){
             this.checkboxValidation()
             this.$emit("close")
+        },
+        closeFromOutside(e){
+            if(e.target === e.currentTarget){
+                this.$emit("close")
+            }
         }, 
         checkboxValidation(){
             if(this.checked){
@@ -55,14 +60,14 @@ export default {
         top: 0;
         left: 0;
         .modal-window{
-            width: 25%;
-            background-color: $secondary;
+            max-width: 500px;
+            background-color: #f7f7f7;
             padding: 30px;
             @include flex-column();
             align-items: center;
             border-radius: 30px;
             .question{
-                color: white;
+                color: $white;
                 font-size: 20px;
                 text-align: center;
             }
@@ -81,10 +86,21 @@ export default {
 
             .input-container{
                 label{
-                    color: white;
+                    color: $white;
                     margin-left: 10px;
                 }
             }
+        }
+    }
+
+    @media(max-width: 768px){
+        .modal-container .modal-window{
+            max-width: 400px;
+        }
+    }
+    @media(max-width: 584px){
+        .modal-container .modal-window{
+            max-width: 300px;
         }
     }
     

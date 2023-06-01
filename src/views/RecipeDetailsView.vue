@@ -327,7 +327,7 @@ export default {
         outline: none;
         border: none;
         font-size: 22px;
-        background-color: $secondary;
+        background-color: $tertiary;
         border: $tertiary solid 3px;
         padding: 12px 18px;
         color: white;
@@ -336,8 +336,9 @@ export default {
         border-radius: 14px;
         transition: background-color 0.4s;
         &:hover{
-            background-color: $tertiary;
-            color: $primary;
+            background-color: $white;
+            color: $tertiary;
+            border-color: $white;
         }
     }
     .save-btn, .delete-btn{

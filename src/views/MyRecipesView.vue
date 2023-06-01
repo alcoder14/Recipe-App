@@ -109,6 +109,7 @@ export default {
         @include flex-row();
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
         p{
             font-size: 30px;
             color: $tertiary;

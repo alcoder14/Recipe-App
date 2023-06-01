@@ -15,12 +15,14 @@ export default {
 
 <style lang="scss" scoped>
 
+    @import "@/assets/global.scss";
+
     .title-container{
         width: 100%;
         h2{
             text-align: left;
             font-size: 40px;
-            color: white;
+            color: $white;
         }
     }
     @media(max-width: 1024px){

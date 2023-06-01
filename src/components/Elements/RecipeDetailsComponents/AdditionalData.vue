@@ -1,35 +1,35 @@
 <template>
     <table class="data-table">
         <tr>
-            <td>Title</td>
+            <th>Title</th>
             <td>{{ details.title }}</td>
         </tr>
         <tr>
-            <td>Ready in</td>
+            <th>Ready in</th>
             <td>{{ details.readyInMinutes }} minutes</td>
         </tr>
         <tr>
-            <td>Servings</td>
+            <th>Servings</th>
             <td>{{ details.servings }}</td>
         </tr>
         <tr>
-            <td>Vegetarian</td>
+            <th>Vegetarian</th>
             <td>{{ vegetarian }}</td>
         </tr>
         <tr>
-            <td>Vegan</td>
+            <th>Vegan</th>
             <td>{{ vegan }}</td>
         </tr>
         <tr>
-            <td>Very healthy: </td>
+            <th>Very healthy: </th>
             <td>{{ veryHealty }}</td>
         </tr>
         <tr>
-            <td>Gluten</td>
+            <th>Gluten</th>
             <td>{{ gluten }}</td>
         </tr>
         <tr>
-            <td>HealthScore</td>
+            <th>HealthScore</th>
             <td>{{ details.healthScore }}</td>
         </tr>
     </table>
@@ -80,9 +80,16 @@ export default {
             border: none;
         }
         td{
-            font-size: 18px;
-            color: $white;
+            font-size: 18px;   
             padding: 10px;
+        }
+        th{
+            color: $tertiary;
+            text-align: left;
+            padding-left: 20px;
+        }
+        td:nth-child(even){
+            color: $white;
         }
     }
     
