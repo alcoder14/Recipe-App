@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="max-width-1400" v-if="!finishedLoading">
-            <LoadingScreen text="Loading" />
+            <LoadingScreen text="Loading meals" />
         </div>
     </section>
 </template>

@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { MotionPlugin } from '@vueuse/motion';
 import App from './App.vue'
 import router from './router'
 
@@ -20,4 +21,4 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faSearch, faBurger, faFish, faBowlRice, faPizzaSlice, faBookmark, faCheck, faHome, faList, faGlobe, faTrash)
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).mount('#app')
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).use(MotionPlugin).mount('#app')

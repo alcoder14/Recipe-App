@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-container">
+  <div class="loading-container" :class="{'fullscreen': fullScreen === true}">
     <p class="text">{{ text }}</p>
     <div class="progress-container">
         <div class="progress"></div>
@@ -11,7 +11,8 @@
 export default {
     name: "LoadingScreen",
     props: {
-        text: String
+        text: String,
+        fullScreen: Boolean
     }
 }
 </script>
@@ -57,6 +58,27 @@ export default {
                 95%{left: 90%; width: 10%;}
                 100%{width: 0; left: 100%;}
             }
+        }
+    }
+
+    .fullscreen{
+        border-radius: none;
+        height: 100vh;
+        z-index: 500;
+        position: fixed;
+        background-color: white;
+        top: 0;
+        left: 0;
+    }
+
+    @media(max-width: 1024px){
+        .loading-container .progress-container{
+            width: 50%;
+        }
+    }
+    @media(max-width: 584px){
+        .loading-container .progress-container{
+            width: 70%;
         }
     }
     

@@ -1,7 +1,9 @@
 <template>
         <div class="box">
             <router-link :to="/recipe/ + id" class="link">
-                <img :src="image" alt="image" v-show="!image_unavailable">
+                <div class="image-container">
+                    <img :src="image" alt="image" v-show="!image_unavailable">
+                </div>
             </router-link>
 
             <router-link :to="/recipe/ + id" class="link">
@@ -107,16 +109,26 @@ export default {
         width: 100%;
         border-radius: $border-radius;
         margin-bottom: 20px;
-        height: fit-content;
         .link{
             width: inherit;
         }
-        img{
-            width: inherit;
-            height: auto;
-            z-index: 10;
+        .image-container{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
             border-radius: $border-radius;
+            img{
+                width: inherit;
+                height: auto;
+                z-index: 10;
+                transition: transform 0.7s;
+                border-radius: $border-radius;
+            }
+
         }
+
+
+
         .image-unavailable{
             width: 100%;
             height: 200px;
@@ -150,6 +162,10 @@ export default {
                 cursor: pointer;
             }
         }
+    }
+
+    .box:hover .image-container img{
+        transform: scale(1.17);
     }
 
     @media(max-width: 1024px){

@@ -30,16 +30,16 @@
                     <RecipeSummary :summary="summary" v-if="summaryVisible"/>
                 </div>
             </div>
-            <div class="mobile-toggle-btns-container" v-if="mobileToggleVisible">
+            <div class="mobile-toggle-btns-container">
                 <button @click="showInstructions" :disabled="instructionsButtonDisabled" class="toggle-btn instructions-btn">Instructions</button>
-                <button @click="showIngredients" :disabled="ingredientsButtonDisabled" class="toggle-btn ingredients-btn">Ingredients</button>
+                <button @click="showIngredients" :disabled="!instructionsButtonDisabled" class="toggle-btn ingredients-btn">Ingredients</button>
             </div>
             <InstructionSteps :instructions="instructions" v-if="instructionsVisible" />
-            <IngredientsData :ingredients="ingredients" v-if="ingredientsVisible" />
+            <IngredientsData :ingredients="ingredients" v-if="!instructionsVisible" />
             <CardsContainer :isOdd="true" titleText="Similar recipes" limit=4 :similar_recipes_id=recipe_id requestType="similar" :disablePadding="true"/>
         </div>
         <div class="max-width-1400" v-if="!finishedLoading">
-            <LoadingScreen text="Loading" />
+            <LoadingScreen text="Preparing your meal" :fullScreen="true" />
         </div>
     </section>
     <MessageWindow message="The recipe has been saved" v-if="messageWindowVisible" />
@@ -103,12 +103,9 @@ export default {
             messageWindowVisible: false,
 
             // Ingredients/Instructions toggling management
-            mobileToggleVisible: false,
             instructionsVisible: true,
-            ingredientsVisible: true,
 
             instructionsButtonDisabled: true,
-            ingredientsButtonDisabled: false,
 
             // Window Width
 
@@ -135,10 +132,6 @@ export default {
         if(localStorage.getItem("recipeIDs") !== null){
             this.checkSaved()
         }
-
-        // Call function for checking width
-        window.addEventListener("resize", this.checkWidth)
-        this.checkWidth()
 
         // Fetch Data
         axios.get("https://api.spoonacular.com/recipes/" + this.recipe_id + "/information?apiKey=" + process.env.VUE_APP_API_SPOONACULAR)
@@ -200,9 +193,6 @@ export default {
 
 
         saveRecipe(){
-
-            console.log(this.basicInfo)
-
             if(localStorage.getItem("recipeIDs") == null){
                 localStorage.setItem("recipeIDs", JSON.stringify([this.basicInfo]))
                 console.log(localStorage.recipeIDs)
@@ -255,40 +245,14 @@ export default {
             }, 2800);
         },
 
-        // Check width of the viewport and show/hide instructions/ingredients toggling buttons
-
-        checkWidth(){
-            if(window.innerWidth < 768){
-                this.mobileToggleVisible = true 
-                
-                this.ingredientsVisible = false
-
-            } else {
-
-                // If the screen is resized over 768px, reset everything
-
-                this.mobileToggleVisible = false
-                this.ingredientsVisible = true
-                this.instructionsVisible = true
-
-                this.instructionsButtonDisabled = true
-                this.ingredientsButtonDisabled = false
-            }
-        },
 
         showInstructions(){
             this.instructionsVisible = true
-            this.ingredientsVisible = false
-
             this.instructionsButtonDisabled = true
-            this.ingredientsButtonDisabled = false
         },
         showIngredients(){
             this.instructionsVisible = false
-            this.ingredientsVisible = true
-
             this.instructionsButtonDisabled = false
-            this.ingredientsButtonDisabled = true
         }
     }
 }
