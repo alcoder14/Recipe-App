@@ -46,7 +46,7 @@ export default {
                     font-size: 24px;
                 }
                 .content{
-                    color: $white;
+                    color: $text;
                     font-size: 20px;
                 }
             }

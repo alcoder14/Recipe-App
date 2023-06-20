@@ -50,7 +50,7 @@ export default {
         .cell-2{
             flex-basis: 90%;
             .step-text{
-                color: $white;
+                color: $text;
                 font-size: 20px;
             }
         }

@@ -89,7 +89,7 @@ export default {
             padding-left: 20px;
         }
         td:nth-child(even){
-            color: $white;
+            color: $text;
         }
     }
     

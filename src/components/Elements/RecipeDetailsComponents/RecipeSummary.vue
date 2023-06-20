@@ -33,7 +33,7 @@ export default {
     @import "@/assets/global.scss";
     .summary-container{
         margin-top: 20px;
-        color: $white;
+        color: $text;
         font-size: 20px;
         a{
             color: $tertiary;

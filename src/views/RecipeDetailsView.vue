@@ -300,9 +300,9 @@ export default {
         border-radius: 14px;
         transition: background-color 0.4s;
         &:hover{
-            background-color: $white;
+            background-color: $text;
             color: $tertiary;
-            border-color: $white;
+            border-color: $text;
         }
     }
     .save-btn, .delete-btn{

@@ -67,7 +67,7 @@ export default {
             align-items: center;
             border-radius: 30px;
             .question{
-                color: $white;
+                color: $text;
                 font-size: 20px;
                 text-align: center;
             }
@@ -86,7 +86,7 @@ export default {
 
             .input-container{
                 label{
-                    color: $white;
+                    color: $text;
                     margin-left: 10px;
                 }
             }

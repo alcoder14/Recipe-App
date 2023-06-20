@@ -21,13 +21,13 @@ export default {
         @include flex-row();
         align-items: center;
         justify-content: center;
-        color: $white;
+        color: $text;
         p{
             font-size: 30px;
-            color: $white;
+            color: $text;
         }
         a{
-            color: $white;
+            color: $text;
         }
     }
 

@@ -29,7 +29,8 @@ export default {
         border-radius: 20px;
         .text{
             font-size: 40px;
-            color: $white;
+            color: $text;
+            text-align: center;
         }
 
         .progress-container{
@@ -41,7 +42,7 @@ export default {
             position: relative;
             .progress{
                 height: inherit;
-                background-color: $white;
+                background-color: $text;
                 width: 10%;
                 border-radius: inherit;
                 position: absolute;

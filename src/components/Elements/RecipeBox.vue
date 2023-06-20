@@ -137,7 +137,7 @@ export default {
             @include flex-column();
             justify-content: center;
             align-items: center;
-            color: $white;
+            color: $text;
         }
         .text-container{
             width: inherit;

@@ -40,7 +40,7 @@ export default {
                 width: 60%;
                 border-top-left-radius: $radius;
                 border-bottom-left-radius: $radius;
-                border: $white solid 2px;
+                border: $text solid 2px;
                 border-right: none;
             }
             .submit{
@@ -51,12 +51,12 @@ export default {
                 color: $tertiary;
                 cursor: pointer;
                 transition: all 0.4s;
-                border: $white solid 2px;
+                border: $text solid 2px;
                 border-left: none;
             }
             .submit:hover{
                 background-color: $tertiary;
-                color: $white;
+                color: $text;
             }
             .input, .submit{
                 font-size: 25px;

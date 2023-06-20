@@ -84,9 +84,10 @@ export default {
   .flag-container{
     display: grid;
     grid-template-columns: repeat(4, 300px);
+    grid-template-rows: 29% 29% 29%;
     justify-content: space-between;
-    height: fit-content;
     gap: 30px;
+    height: 90vh;
   }
   @media(max-width: 1440px){
     .flag-container{
